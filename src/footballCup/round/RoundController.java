@@ -36,8 +36,7 @@ public class RoundController {
         ArrayList<Team> winningTeams = new ArrayList();
 
         for (int i = 0; i < firstGroup.size(); i++) {
-            System.out.println("\n   Game " + (i + 1) + ": ");
-            System.out.println(firstGroup.get(i).getName() + " VS " + secondGroup.get(i).getName());
+
 
             int team1Score = 0;
             int team2Score = 0;
@@ -57,6 +56,10 @@ public class RoundController {
                 }
 
             }
+
+            System.out.println("\n   Game " + (i + 1) + ": ");
+            System.out.println(firstGroup.get(i).getName() + "  VS  " + secondGroup.get(i).getName());
+            System.out.println("   " + firstGroup.get(i).getScore() + "   " + "       " + secondGroup.get(i).getScore());
         }
             System.out.println("\n\n ------------- Rond " + round.name + "Winning Teams ------------- \n\n ");
 
