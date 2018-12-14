@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 public class RoundController {
 
+    /* Start the Tournament Method
+       Printing all Teams Info. */
     public static void startTournament(ArrayList<Team> teamList) {
         System.out.println("All Teams Info. : \n");
         teamList.forEach(team -> {
@@ -18,26 +20,26 @@ public class RoundController {
         });
 
     }
+    // End of Tournament Method
 
 
     public static ArrayList<Team> roundResults(Round round, ArrayList<Team> TeamList) {
 
         System.out.println("\n \n *******  Round " + round.name + "  *******    \n\n");
 
-
         ArrayList<Team> firstGroup = new ArrayList();
         ArrayList<Team> secondGroup = new ArrayList();
 
+         // looping through the main TeamList and creating tow list group from it's elements
         for (int i = 0; i < TeamList.size(); i = i + 2) {
             firstGroup.add(TeamList.get(i));
             secondGroup.add(TeamList.get(i + 1));
         }
 
+        // creating winningTeams list by creating two random scores for each team and compare them to select the winner
         ArrayList<Team> winningTeams = new ArrayList();
 
         for (int i = 0; i < firstGroup.size(); i++) {
-
-
             int team1Score = 0;
             int team2Score = 0;
             while (team1Score == team2Score) {
@@ -56,7 +58,7 @@ public class RoundController {
                 }
 
             }
-
+            // printing the Match info in each round
             System.out.println("\n   Game " + (i + 1) + ": ");
             System.out.println(firstGroup.get(i).getName() + "  VS  " + secondGroup.get(i).getName());
             System.out.println("   " + firstGroup.get(i).getScore() + "   " + "       " + secondGroup.get(i).getScore());
@@ -75,6 +77,7 @@ public class RoundController {
 
 
     }
+        // endTournament to print the final winner
 
         public static void endTournament (Team team) {
             System.out.println("\n\n ***** Winning Team ***** \n\n ");
